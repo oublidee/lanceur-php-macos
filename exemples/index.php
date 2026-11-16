@@ -1,6 +1,7 @@
 <?php
 // Routeur de démonstration : toutes les URL affichent cette page.
-// Remplacez ce fichier par votre application ou choisissez un autre routeur.
+// Exemple facultatif : sélectionnez-le dans le lanceur pour essayer le routage.
+// Votre propre fichier index.php reste local et ne doit pas être publié avec ce projet.
 declare(strict_types=1);
 
 header('Content-Type: text/html; charset=UTF-8');
@@ -46,8 +47,8 @@ $chemin = htmlspecialchars(
         <h1>Votre serveur PHP fonctionne.</h1>
         <p>Le lanceur utilise ce fichier comme routeur pour les requêtes.</p>
         <p>Adresse demandée : <code><?= $chemin ?></code></p>
-        <p>Remplacez <code>index.php</code> par votre application ou sélectionnez
-            un autre fichier depuis le lanceur.</p>
+        <p>Pour utiliser votre application, sélectionnez son fichier PHP
+            depuis le lanceur.</p>
     </main>
 </body>
 </html>

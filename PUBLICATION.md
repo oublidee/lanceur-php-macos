@@ -12,7 +12,7 @@ Placez les fichiers modifiés dans l’index Git, puis relisez le contenu du com
 
 ```bash
 git status
-git add .gitignore README.md PUBLICATION.md requirements.txt index.php php_server_launcher.py
+git add .gitignore README.md PUBLICATION.md requirements.txt exemples/index.php php_server_launcher.py
 git diff --cached --stat
 git diff --cached
 ```
@@ -40,7 +40,7 @@ git remote add origin https://github.com/VOTRE_COMPTE/lanceur-php-macos.git
 git push -u origin main
 ```
 
-Le dossier `sites-locaux/`, les environnements Python, les fichiers `.env` et les journaux sont ignorés. Le fichier `index.php` suivi est uniquement la démonstration publique fournie avec le projet.
+Le fichier `index.php` à la racine, le dossier `sites-locaux/`, les environnements Python, les fichiers `.env` et les journaux sont ignorés. Seul `exemples/index.php` est publié comme démonstration facultative ; votre application PHP reste locale.
 
 ## Envoyer les modifications suivantes
 

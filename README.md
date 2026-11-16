@@ -12,9 +12,11 @@ Depuis le dossier du projet :
 python3 php_server_launcher.py
 ```
 
-Au premier lancement, laissez le Terminal ouvert pendant la préparation de Python, Tkinter et CustomTkinter si nécessaire. Dans la fenêtre, attendez **« 🎉 Tout est OK – environnement prêt »**, puis cliquez sur **Démarrer le serveur**.
+Au premier lancement, laissez le Terminal ouvert pendant la préparation de Python, Tkinter et CustomTkinter si nécessaire. Dans la fenêtre, attendez **« 🎉 Tout est OK – environnement prêt »**. Cliquez sur **Choisir un fichier…** pour sélectionner votre fichier PHP, puis sur **Démarrer le serveur**.
 
-La démonstration est alors accessible à l’adresse **[http://127.0.0.1:8000/](http://127.0.0.1:8000/)**.
+Pour un essai, sélectionnez le fichier facultatif [`exemples/index.php`](exemples/index.php). La démonstration sera accessible à l’adresse **[http://127.0.0.1:8000/](http://127.0.0.1:8000/)**.
+
+Votre propre fichier PHP n’a pas besoin d’être présent sur GitHub. Le lanceur peut servir un fichier situé ailleurs sur votre Mac.
 
 ## Fonctionnalités
 
@@ -42,7 +44,7 @@ Le lanceur recherche un Python compatible avec Tk. Si nécessaire, il installe P
 ## Utilisation
 
 1. Lancez le script depuis le Terminal et attendez la fin des vérifications.
-2. Conservez le fichier `index.php` de démonstration ou cliquez sur **Choisir un fichier…** pour sélectionner votre application PHP.
+2. Cliquez sur **Choisir un fichier…** pour sélectionner le routeur de votre application PHP. Pour essayer le lanceur, vous pouvez choisir `exemples/index.php`.
 3. Choisissez l’hôte et le port. Activez **Ouvrir le navigateur** si vous souhaitez une ouverture automatique.
 4. Cliquez sur **Démarrer le serveur**. Le badge passe à **En cours** et le bouton devient **Arrêter le serveur**.
 5. Consultez les requêtes et les erreurs dans le journal. Le bouton **Effacer** nettoie son affichage.
@@ -51,6 +53,17 @@ Le lanceur recherche un Python compatible avec Tk. Si nécessaire, il installe P
 L’adresse par défaut est `http://127.0.0.1:8000/`. Le bouton **Ouvrir** permet de l’ouvrir à tout moment lorsque le serveur fonctionne.
 
 Pour vérifier le routage avec la démonstration, ouvrez aussi `http://127.0.0.1:8000/bonjour` : la même page affiche le chemin demandé.
+
+### Fichier par défaut et exemple facultatif
+
+Le paramètre `DEFAULT_FILE = "index.php"` recherche votre fichier personnel à côté du script Python. Ce fichier local est ignoré par Git et n’est pas fourni à la racine du dépôt. S’il est absent, choisissez simplement un autre fichier depuis l’interface.
+
+Pour essayer l’exemple sans utiliser le sélecteur de fichiers, vous pouvez en créer une copie locale, sans remplacer un éventuel `index.php` existant :
+
+```bash
+cp -n exemples/index.php index.php
+python3 php_server_launcher.py
+```
 
 ## Préparation automatique
 
@@ -91,14 +104,15 @@ Le chemin réel est déterminé par Homebrew. Une formule PHP versionnée déjà
 ```text
 .
 ├── php_server_launcher.py  # Application et paramètres
-├── index.php               # Routeur PHP de démonstration
+├── exemples/
+│   └── index.php           # Démonstration facultative du routage
 ├── requirements.txt        # Version CustomTkinter vérifiée
 ├── README.md               # Installation et utilisation
 ├── PUBLICATION.md          # Instructions de publication GitHub
 └── .gitignore              # Exclusions des fichiers locaux
 ```
 
-Vous pouvez conserver le script et votre routeur dans un même dossier, ou choisir un fichier PHP situé ailleurs sur votre Mac.
+Vous pouvez conserver le script et votre routeur dans un même dossier, ou choisir un fichier PHP situé ailleurs sur votre Mac. Seul l’exemple de `exemples/` est suivi par Git ; le fichier `index.php` à la racine reste local.
 
 ## Dépendances Python
 
@@ -133,7 +147,7 @@ Choisissez un autre port, par exemple `8001`, puis redémarrez le serveur.
 
 **Fichier PHP introuvable**
 
-Placez `index.php` à côté du script ou sélectionnez un autre fichier avec le bouton prévu.
+Placez votre fichier `index.php` à côté du script ou sélectionnez un autre fichier avec le bouton prévu. Le fichier `exemples/index.php` est disponible pour un simple essai.
 
 ## Développement local
 
