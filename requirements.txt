@@ -1,0 +1,2 @@
+# Version vérifiée avec Python 3.15 / Tk 9.1 sur macOS Apple Silicon.
+customtkinter==6.0.0
